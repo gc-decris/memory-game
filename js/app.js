@@ -1,6 +1,11 @@
 /*
  * Create a list that holds all of your cards
  */
+var deck = [];
+
+$('.card').each(function(){
+    deck.push($(this));
+});
 
 
 /*
