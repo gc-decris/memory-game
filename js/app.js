@@ -1,10 +1,10 @@
 /*
  * Create a list that holds all of your cards
  */
-var deck = [];
+var deckList = [];
 
 $('.card').each(function(){
-    deck.push($(this));
+    deckList.push($(this));
 });
 
 
@@ -29,7 +29,12 @@ function shuffle(array) {
 
     return array;
 }
-shuffle(deck);
+shuffle(deckList);
+
+for (x = 0; x < deckList.length; x++){
+    var card = deckList[x];
+    
+}
 
 
 /*
