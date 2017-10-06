@@ -48,7 +48,9 @@ for (x = 0; x < deckList.length; x++) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 // classes open and show = flipped card --- class match = matched card
+var selected = [];
 
 $('.card').click(function(){
     $(this).addClass('open show')
+    selected.push($(this));
 })
