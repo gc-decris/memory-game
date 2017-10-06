@@ -29,6 +29,7 @@ function shuffle(array) {
 
     return array;
 }
+shuffle(deck);
 
 
 /*
