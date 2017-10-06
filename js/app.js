@@ -47,3 +47,8 @@ for (x = 0; x < deckList.length; x++) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+// classes open and show = flipped card --- class match = matched card
+
+$('.card').click(function(){
+    $(this).addClass('open show')
+})
