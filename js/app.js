@@ -31,10 +31,10 @@ function shuffle(array) {
 }
 shuffle(deckList);
 
-for (x = 0; x < deckList.length; x++){
+for (x = 0; x < deckList.length; x++) {
     var card = deckList[x];
-    
-}
+    $('.deck').append(card);
+};
 
 
 /*
