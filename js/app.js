@@ -49,6 +49,7 @@ for (x = 0; x < deckList.length; x++) {
  */
 // classes open and show = flipped card --- class match = matched card
 var selected = [];
+var moveCount = 0;
 
 function checkCards (array) {
     var cardOne = array[0];
@@ -70,12 +71,19 @@ function matched(one, two) {
     $(two).addClass('match');
 }
 
+function moveCounter() {
+    $('.moves').empty();
+    $('.moves').text(moveCount);
+}
+
 $('.card').click(function(){
     $(this).addClass('open show')
     selected.push($(this));
     if (selected.length == 2){
         setTimeout(function() {
-        checkCards(selected);  
+        checkCards(selected); 
+        moveCount = moveCount + 1;
+        moveCounter(); 
         }, 1000);
     }
 })
