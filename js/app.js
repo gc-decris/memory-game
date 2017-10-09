@@ -50,7 +50,6 @@ for (x = 0; x < deckList.length; x++) {
 // classes open and show = flipped card --- class match = matched card
 var selected = [];
 
-
 function checkCards (array) {
     var cardOne = array[0];
     var cardTwo = array[1];
@@ -58,18 +57,22 @@ function checkCards (array) {
         $(cardOne).addClass('match');
         $(cardTwo).addClass('match');
     } else {
-        $(cardOne).removeClass('open show');
-        $(cardTwo).removeClass('open show');
-
+        unmatched(cardOne, cardTwo);
     }
     return selected = [];
 };
+function unmatched(one, two) {
+    $(one).removeClass('open show');
+    $(two).removeClass('open show');
+}
 
 $('.card').click(function(){
     $(this).addClass('open show')
     selected.push($(this));
     if (selected.length == 2){
-        checkCards(selected);
+        setTimeout(function() {
+        checkCards(selected);  
+        }, 1000);
     }
 })
 
