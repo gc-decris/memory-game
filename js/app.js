@@ -54,8 +54,7 @@ function checkCards (array) {
     var cardOne = array[0];
     var cardTwo = array[1];
     if ($(cardOne).find('i').attr('class') === $(cardTwo).find('i').attr('class')){
-        $(cardOne).addClass('match');
-        $(cardTwo).addClass('match');
+        matched(cardOne, cardTwo);
     } else {
         unmatched(cardOne, cardTwo);
     }
@@ -64,6 +63,11 @@ function checkCards (array) {
 function unmatched(one, two) {
     $(one).removeClass('open show');
     $(two).removeClass('open show');
+}
+
+function matched(one, two) {
+    $(one).addClass('match');
+    $(two).addClass('match');
 }
 
 $('.card').click(function(){
