@@ -78,6 +78,18 @@ function moveCounter() {
     $('.moves').text(moveCount);
 }
 
+function checkWin(){
+    var win = true
+    for (var index = 0; index < deckList.length; index++) {
+        var cards = deckList[index];
+        if ($(cards).hasClass('match') === false) {
+            win = false
+        }
+    }
+    if (win === true) {
+        alert("You Win");
+    }
+}
 
 $('.card').click(function(){
     $(this).addClass('open show')
@@ -87,13 +99,7 @@ $('.card').click(function(){
         checkCards(selected); 
         moveCount = moveCount + 1;
         moveCounter(); 
-        for (var index = 0; index < deckList.length; index++) {
-            var cards = deckList[index];
-            if ($(cards).hasClass('match')) {             
-            } else {
-                break
-            } return alert("You Win")
-        }
+        checkWin();
         }, 1000);
     }
 })
