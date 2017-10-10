@@ -46,6 +46,7 @@ for (x = 0; x < deckList.length; x++) {
  *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ *    ++ SHUFFLE DECK WHEN YOU HIT THE RELOAD ICON  
  */
 // classes open and show = flipped card --- class match = matched card
 var selected = [];
@@ -61,6 +62,7 @@ function checkCards (array) {
     }
     return selected = [];
 };
+
 function unmatched(one, two) {
     $(one).removeClass('open show');
     $(two).removeClass('open show');
@@ -76,6 +78,7 @@ function moveCounter() {
     $('.moves').text(moveCount);
 }
 
+
 $('.card').click(function(){
     $(this).addClass('open show')
     selected.push($(this));
@@ -84,8 +87,13 @@ $('.card').click(function(){
         checkCards(selected); 
         moveCount = moveCount + 1;
         moveCounter(); 
+        for (var index = 0; index < deckList.length; index++) {
+            var cards = deckList[index];
+            if ($(cards).hasClass('match')) {             
+            } else {
+                break
+            } return alert("You Win")
+        }
         }, 1000);
     }
 })
-
-
