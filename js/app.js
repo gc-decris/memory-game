@@ -114,3 +114,14 @@ $('.card').click(function(){
         }, 1000);
     }
 })
+
+$('.restart').click(function () {
+    $('.card').removeClass('open show match');
+    shuffle(deckList);
+    for (x = 0; x < deckList.length; x++) {
+        var card = deckList[x];
+        $('.deck').append(card);
+    };
+    moveCount = 0;
+    moveCounter();
+});
