@@ -87,7 +87,8 @@ function checkWin(){
         }
     }
     if (win === true) {
-        alert("You Win");
+        $('.score').text(moveCount);
+        $('.alert').toggleClass('hidden');
     }
 }
 

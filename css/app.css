@@ -107,3 +107,29 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/* Style for win message */
+
+.alert {
+    position: fixed;
+    top: 128px;
+    width: 100%;
+}
+
+.won {
+    width: 250px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+button {
+    margin: 0 0 15px;
+    background: #5abbb8;
+    border-radius: 5px;
+}
+
+.hidden {
+   display: none; 
+}
