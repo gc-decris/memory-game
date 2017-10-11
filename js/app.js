@@ -92,6 +92,16 @@ function checkWin(){
     }
 }
 
+$('button').click(function(){
+    $('.card').toggleClass('open show match');
+    $('.alert').toggleClass('hidden');
+    shuffle(deckList);
+    for (x = 0; x < deckList.length; x++) {
+        var card = deckList[x];
+        $('.deck').append(card);
+    };
+});
+
 $('.card').click(function(){
     $(this).addClass('open show')
     selected.push($(this));
