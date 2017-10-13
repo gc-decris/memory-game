@@ -112,3 +112,40 @@ $('.restart').click(function () {
     moveCount = 0;
     moveCounter();
 });
+
+// TIMER FUNCTION
+
+var timerSec = 0;
+var timerMin = 0;
+var timerSecTen = "0";
+
+function resetTime(){
+    $('.seconds').empty();
+    $('.secondsTen').empty();
+    $('.minutes').empty();
+}
+
+function countUP() {
+    if (timerSec === 9) {
+        timerSecTen = "";
+        timerSec++;
+        $('.seconds').text(timerSec);
+        $('.secondsTen').text(timerSecTen);
+    } else if (timerSec === 59){
+        timerSec = 0;
+        timerSecTen = "0";
+        timerMin++;
+        $('.seconds').text(timerSec);
+        $('.secondsTen').text(timerSecTen);
+        $('.minutes').text(timerMin);
+    } else {
+        timerSec++;
+        $('.seconds').text(timerSec);
+    };
+    setTimeout("countUP()", 1000);
+};
+
+$('.startTimer').click(function(){
+    $('.seconds').text(timerSec);
+    countUP();
+})
