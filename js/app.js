@@ -149,6 +149,5 @@ function countUP() {
 $('.startTimer').click(function(){
     $('.seconds').text(timerSec);
     countUP();
+    $('.startAlert').toggleClass('hidden');
 })
-
-// $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);
