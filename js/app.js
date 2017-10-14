@@ -91,6 +91,11 @@ $('.card').click(function () {
             moveCounter();
             checkWin();
         }, 1000);
+        if (moveCount === 12) {
+            $('.stars li').last().remove();
+        } else if (moveCount === 18) {
+            $('.stars li').last().remove();
+        };
     }
 });
 
