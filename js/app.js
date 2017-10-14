@@ -76,6 +76,7 @@ function checkWin() {
     if (win === true) {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
+        $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);        
     }
 };
 
@@ -149,3 +150,5 @@ $('.startTimer').click(function(){
     $('.seconds').text(timerSec);
     countUP();
 })
+
+// $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);
