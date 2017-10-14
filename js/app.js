@@ -132,6 +132,7 @@ $('.restart').click(function () {
     };
     moveCount = 0;
     moveCounter();
+    resetTime();
 });
 
 // TIMER FUNCTION
