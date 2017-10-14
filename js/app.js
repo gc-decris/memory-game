@@ -77,7 +77,8 @@ function checkWin() {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
         $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);  
-        $('.time').toggleClass('hidden');    
+        $('.time').toggleClass('hidden'); 
+        $('.starFinal').html($('.stars'));   
     }
 };
 

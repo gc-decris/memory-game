@@ -141,6 +141,13 @@ button {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+.stars {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+}
+
 /* Style for start message */
 
 .startAlert {
