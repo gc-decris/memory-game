@@ -31,6 +31,17 @@ body {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    margin: 5px 0 21px;
+}
+
+.hidden {
+   display: none; 
+}
+
+button {
+    margin: 0 0 15px;
+    background: #5abbb8;
+    border-radius: 5px;
 }
 
 /*
@@ -108,6 +119,12 @@ h1 {
     cursor: pointer;
 }
 
+/* Style for time */
+
+.time {
+    margin: 10px 0 0;
+}
+
 /* Style for win message */
 
 .alert {
@@ -124,12 +141,18 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
-button {
-    margin: 0 0 15px;
-    background: #5abbb8;
-    border-radius: 5px;
+/* Style for start message */
+
+.startAlert {
+    position: fixed;
+    top: 128px;
 }
 
-.hidden {
-   display: none; 
+.start {
+    width: 250px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    text-align: center;
 }
