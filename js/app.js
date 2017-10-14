@@ -76,7 +76,8 @@ function checkWin() {
     if (win === true) {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
-        $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);        
+        $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);  
+        $('.time').toggleClass('hidden');    
     }
 };
 
@@ -96,6 +97,8 @@ $('.card').click(function () {
 $('#playAgain').click(function(){
     $('.card').toggleClass('open show match');
     $('.alert').toggleClass('hidden');
+    $('.time').toggleClass('hidden');
+    resetTime();
     shuffle(deckList);
     for (x = 0; x < deckList.length; x++) {
         var card = deckList[x];
@@ -121,9 +124,12 @@ var timerMin = 0;
 var timerSecTen = "0";
 
 function resetTime(){
-    $('.seconds').empty();
-    $('.secondsTen').empty();
-    $('.minutes').empty();
+    timerSec = 0;
+    timerSecTen = 0;
+    timerMin = 0;
+    $('.seconds').text(timerSec);
+    $('.secondsTen').text(timerSecTen);
+    $('.minutes').text(timerMin);
 }
 
 function countUP() {
