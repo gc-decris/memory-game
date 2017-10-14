@@ -77,10 +77,17 @@ function checkWin() {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
         $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);  
-        $('.time').toggleClass('hidden'); 
-        $('.starFinal').html($('.stars'));   
+        $('.time').toggleClass('hidden');
+        $('.starFinal').html($('.stars')); 
     }
 };
+
+// Start function to reset the stars
+function starReset() {
+    $('.stars').empty();
+    $('.stars').append('<li><i class="fa fa-star"></i></li>', '<li><i class="fa fa-star"></i></li>', '<li><i class="fa fa-star"></i></li>');
+}
+// End function to reset stars
 
 $('.card').click(function () {
     $(this).addClass('open show')
@@ -104,6 +111,8 @@ $('#playAgain').click(function(){
     $('.card').toggleClass('open show match');
     $('.alert').toggleClass('hidden');
     $('.time').toggleClass('hidden');
+    $('.starContainer').html($('.stars'));
+    starReset();
     resetTime();
     shuffle(deckList);
     for (x = 0; x < deckList.length; x++) {

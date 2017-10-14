@@ -119,6 +119,10 @@ button {
     cursor: pointer;
 }
 
+.starContainer {
+    display: inline;
+}
+
 /* Style for time */
 
 .time {
