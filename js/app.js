@@ -114,6 +114,8 @@ $('#playAgain').click(function(){
     $('.starContainer').html($('.stars'));
     starReset();
     resetTime();
+    moveCount = 0;
+    moveCounter();
     shuffle(deckList);
     for (x = 0; x < deckList.length; x++) {
         var card = deckList[x];
