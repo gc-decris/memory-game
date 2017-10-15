@@ -98,8 +98,9 @@ button {
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 49%;
     margin-bottom: 10px;
+    display: flex;
 }
 
 .score-panel .stars {
@@ -115,18 +116,30 @@ button {
 }
 
 .score-panel .restart {
-    float: right;
+    text-align: right;
     cursor: pointer;
+    width: 5%;
+    padding: 0 5px 0 0;
 }
 
 .starContainer {
     display: inline;
+    width: 20%;
 }
 
-/* Style for time */
+.movesContainer {
+    display: flex;
+    width: 20%;
+}
+
+.movesContainer p {
+    margin: 0;
+}
 
 .time {
-    margin: 10px 0 0;
+    margin: 0;
+    width: 55%;
+    text-align: right;
 }
 
 /* Style for win message */
