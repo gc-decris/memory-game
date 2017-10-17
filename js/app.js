@@ -67,8 +67,9 @@ function checkWin() {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
         $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);  
-        $('.time').toggleClass('hidden');
+        // $('.time').toggleClass('hidden');
         $('.starFinal').html($('.stars')); 
+        $('.scorePanel').toggleClass('hidden');
     }
 };
 
@@ -100,7 +101,8 @@ $('.card').click(function () {
 $('#playAgain').click(function(){
     $('.card').toggleClass('open show match');
     $('.alert').toggleClass('hidden');
-    $('.time').toggleClass('hidden');
+    // $('.time').toggleClass('hidden');
+    $('.scorePanel').toggleClass('hidden');
     $('.starContainer').html($('.stars'));
     starReset();
     resetTime();

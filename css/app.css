@@ -35,7 +35,7 @@ h1 {
 }
 
 .hidden {
-   display: none; 
+   display: none !important;  
 }
 
 button {
@@ -96,26 +96,26 @@ button {
  * Styles for the Score Panel
  */
 
-.score-panel {
+.scorePanel {
     text-align: left;
     width: 49%;
     margin-bottom: 10px;
     display: flex;
 }
 
-.score-panel .stars {
+.scorePanel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
 
-.score-panel .stars li {
+.scorePanel .stars li {
     list-style: none;
     display: inline-block;
 }
 
-.score-panel .restart {
+.scorePanel .restart {
     text-align: right;
     cursor: pointer;
     width: 5%;
