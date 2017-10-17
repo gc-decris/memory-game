@@ -140,7 +140,7 @@ function resetTime(){
     $('.minutes').text(timerMin);
 }
 
-function countUP() {
+function countUp() {
     if (timerSec === 9) {
         timerSecTen = "";
         timerSec++;
@@ -157,11 +157,11 @@ function countUP() {
         timerSec++;
         $('.seconds').text(timerSec);
     };
-    setTimeout("countUP()", 1000);
+    setTimeout("countUp()", 1000);
 };
 
 $('.startTimer').click(function(){
     $('.seconds').text(timerSec);
-    countUP();
+    countUp();
     $('.startAlert').toggleClass('hidden');
 })
