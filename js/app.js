@@ -91,7 +91,7 @@ function starReset() {
 }
 // End function to reset stars
 
-// Function on card click
+// Function on card click -- check for match, check for win, and change star rating
 $('.card').click(function () {
     $(this).addClass('open show')
     selected.push($(this));
@@ -102,9 +102,9 @@ $('.card').click(function () {
             moveCounter();
             checkWin();
         }, 1000);
-        if (moveCount === 12) {
+        if (moveCount === 15) {
             $('.stars li').last().remove();
-        } else if (moveCount === 18) {
+        } else if (moveCount === 22) {
             $('.stars li').last().remove();
         };
     }
