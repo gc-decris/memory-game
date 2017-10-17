@@ -1,4 +1,5 @@
 
+//Shuffle Deck 
 var deckList = [];
 
 $('.card').each(function () {
@@ -18,6 +19,8 @@ function shuffle(array) {
 
     return array;
 };
+// End Shuffle function from http://stackoverflow.com/a/2450976
+
 shuffle(deckList);
 
 for (x = 0; x < deckList.length; x++) {
@@ -25,7 +28,9 @@ for (x = 0; x < deckList.length; x++) {
     $('.deck').append(card);
 };
 
-// classes open and show = flipped card --- class match = matched card
+// End Shuffle Desk
+
+// Check if cards match
 var selected = [];
 var moveCount = 0;
 
@@ -50,11 +55,16 @@ function checkCards(array) {
     return selected = [];
 };
 
+// End Check if cards match
+
+// Count player's moves
 function moveCounter() {
     $('.moves').empty();
     $('.moves').text(moveCount);
 };
+// End Count player's moves
 
+//Check for game won 
 function checkWin() {
     var win = true
     for (var index = 0; index < deckList.length; index++) {
@@ -72,6 +82,7 @@ function checkWin() {
         $('.scorePanel').toggleClass('hidden');
     }
 };
+//End Check for game won
 
 // Start function to reset the stars
 function starReset() {
@@ -80,6 +91,7 @@ function starReset() {
 }
 // End function to reset stars
 
+// Function on card click
 $('.card').click(function () {
     $(this).addClass('open show')
     selected.push($(this));
@@ -98,6 +110,9 @@ $('.card').click(function () {
     }
 });
 
+//End Function on card click
+
+// Reset game after game is won
 $('#playAgain').click(function(){
     $('.card').toggleClass('open show match');
     $('.alert').toggleClass('hidden');
@@ -114,7 +129,9 @@ $('#playAgain').click(function(){
         $('.deck').append(card);
     };
 });
+//End Reset game after game is won
 
+//Restart game mid-game
 $('.restart').click(function () {
     $('.card').removeClass('open show match');
     shuffle(deckList);
@@ -126,8 +143,9 @@ $('.restart').click(function () {
     moveCounter();
     resetTime();
 });
+//End Restart game mid-game
 
-// TIMER FUNCTION
+// Timer functions
 
 var timerSec = 0;
 var timerMin = 0;
@@ -167,3 +185,5 @@ $('.startTimer').click(function(){
     countUp();
     $('.startAlert').toggleClass('hidden');
 })
+
+// End Timer functions
