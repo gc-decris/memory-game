@@ -1,6 +1,4 @@
 
-$(document).ready(function (){
-
 //Shuffle Deck 
 var deckList = [];
 
@@ -189,4 +187,3 @@ $('.startTimer').click(function(){
 })
 
 // End Timer functions
-};
