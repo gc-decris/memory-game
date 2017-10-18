@@ -1,20 +1,17 @@
 # Memory Game Project
 
-## Table of Contents
+This is a simple memory game created for the Udacity Front-End Developer Nanodegree Program.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Installation
+
+This project can be cloned or downloaded from GitHub: https://github.com/gc-decris/memory-game.git
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+When you are ready to start the game, press the Start button in the center of the page. Once the game has begun, click through the cards and try to match the cards with identical icons. The point of the game is to match all the cards in the shortest number of moves possible. You can restart the game at any time by pressing the reload button on the top right of the screen.
 
-To get started, open `js/app.js` and start building out the app's functionality
+Once all the cards are matched you will be given a star rating based on the number of moves it took to match all the cars.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## Feedback
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+I welcome any constructive feedback on this project as I continue my journey of learning web development. If you have anything to share, send me a note at g.decris@outlook.com. 
