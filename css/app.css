@@ -220,7 +220,7 @@ button {
         width: 50%;
     }
     .restart {
-        width: 10%;
+        width: 10% !important;
     }
 }
  
