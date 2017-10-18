@@ -182,3 +182,47 @@ button {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     text-align: center;
 }
+
+/* Breakpoint */
+@media only screen and (max-width: 862px) {
+    .scorePanel {
+        width: 80%;
+        max-width: 100%;
+    }
+    .deck {
+        width: 80%;
+        max-width: 100%;
+        /* min-height: 1000px; */
+    }
+    /* .deck .card {
+    height: 165px;
+    width: 165px;
+    } */
+}
+
+@media only screen and (max-width: 717px) {
+    .scorePanel {
+        width: 95%;
+        max-width: 100%;
+    }
+    .deck {
+        width: 95%;
+        max-width: 100%;
+        min-height: 0;
+        padding: 10px;
+    }
+    .deck .card {
+        height: 18vw;
+        width: 18vw;
+        margin: 2px;
+    }
+    .time {
+        width: 50%;
+    }
+    .restart {
+        width: 10%;
+    }
+}
+ 
+
+
