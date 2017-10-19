@@ -50,7 +50,9 @@ function checkCards(array) {
     if ($(cardOne).find('i').attr('class') === $(cardTwo).find('i').attr('class')) {
         matched(cardOne, cardTwo);
     } else {
-        unmatched(cardOne, cardTwo);
+        setTimeout(function(){
+            unmatched(cardOne, cardTwo);
+        }, 1000)
     }
     return selected = [];
 };
@@ -92,23 +94,22 @@ function starReset() {
 // End function to reset stars
 
 // Function on card click -- check for match, check for win, and change star rating
-$('.card').click(function () {
+$('.card').click(function(){
     $(this).addClass('open show')
     selected.push($(this));
+    moveCount = moveCount + 1;
+    moveCounter();
     if (selected.length == 2) {
-        setTimeout(function () {
             checkCards(selected);
-            moveCount = moveCount + 1;
-            moveCounter();
             checkWin();
-        }, 1000);
+    };
         if (moveCount === 15) {
             $('.stars li').last().remove();
         } else if (moveCount === 22) {
             $('.stars li').last().remove();
         };
-    }
-});
+    });
+
 
 //End Function on card click
 
