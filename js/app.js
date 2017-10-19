@@ -54,9 +54,6 @@ function checkCards(array) {
         matched(cardOne, cardTwo);
     } 
     else {
-        // setTimeout(function(){
-        //     unmatched(cardOne, cardTwo);
-        // }, 750)
         $(cardOne).addClass('notMatched');
         $(cardTwo).addClass('notMatched');
 
