@@ -54,7 +54,7 @@ function checkCards(array) {
         matched(cardOne, cardTwo);
     } 
     else {
-        $(cardOne).addClass('notMatched');
+        $(cardOne).addClass('notMatched'); 
         $(cardTwo).addClass('notMatched');
 
     }
@@ -108,9 +108,9 @@ $('.card').click(function(){
             checkCards(selected);
             checkWin();
     };
-        if (moveCount === 15) {
+        if (moveCount === 30) {
             $('.stars li').last().remove();
-        } else if (moveCount === 22) {
+        } else if (moveCount === 44) {
             $('.stars li').last().remove();
         };
     });
