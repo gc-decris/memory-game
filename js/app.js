@@ -52,10 +52,14 @@ function checkCards(array) {
     }
     else if ($(cardOne).find('i').attr('class') === $(cardTwo).find('i').attr('class')) {
         matched(cardOne, cardTwo);
-    } else {
-        setTimeout(function(){
-            unmatched(cardOne, cardTwo);
-        }, 750)
+    } 
+    else {
+        // setTimeout(function(){
+        //     unmatched(cardOne, cardTwo);
+        // }, 750)
+        $(cardOne).addClass('notMatched');
+        $(cardTwo).addClass('notMatched');
+
     }
     return selected = [];
 };
@@ -99,6 +103,7 @@ function starReset() {
 // Function on card click -- check for match, check for win, and change star rating
 $('.card').click(function(){
     $(this).addClass('open show')
+    $('.notMatched').removeClass('open show notMatched');
     selected.push($(this));
     moveCount = moveCount + 1;
     moveCounter();
