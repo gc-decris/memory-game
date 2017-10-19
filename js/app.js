@@ -47,12 +47,15 @@ function matched(one, two) {
 function checkCards(array) {
     var cardOne = array[0];
     var cardTwo = array[1];
-    if ($(cardOne).find('i').attr('class') === $(cardTwo).find('i').attr('class')) {
+    if (($(cardOne).position().left === $(cardTwo).position().left) && ($(cardOne).position().top === $(cardTwo).position().top)){
+        unmatched(cardOne, cardTwo)
+    }
+    else if ($(cardOne).find('i').attr('class') === $(cardTwo).find('i').attr('class')) {
         matched(cardOne, cardTwo);
     } else {
         setTimeout(function(){
             unmatched(cardOne, cardTwo);
-        }, 1000)
+        }, 750)
     }
     return selected = [];
 };
