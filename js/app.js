@@ -103,8 +103,8 @@ $('.card').click(function(){
     if ((timerSec == 0) && (timerSecTen == 0) && (timerMin == 0)) {
         countUp();
     };
-    $(this).addClass('open show')
     $('.notMatched').removeClass('open show notMatched');
+    $(this).addClass('open show')
     selected.push($(this));
     moveCount = moveCount + 1;
     moveCounter();
