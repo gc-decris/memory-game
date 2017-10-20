@@ -164,6 +164,7 @@ $('.restart').click(function () {
     moveCounter();
     stopCount();
     resetTime();
+    selected = [];
 });
 //End Restart game mid-game
 
