@@ -100,11 +100,15 @@ function starReset() {
 // Function on card click -- check for match, check for win, and change star rating
 function clickCard(){
 $('.card').click(function(){
+    if ((timerSec == 0) && (timerSecTen == 0) && (timerMin == 0)) {
+        countUp();
+    };
     $(this).addClass('open show')
     $('.notMatched').removeClass('open show notMatched');
     selected.push($(this));
     moveCount = moveCount + 1;
     moveCounter();
+    doubleClickCheck(selected);
     if (selected.length == 2) {
             checkCards(selected);
             checkWin();
@@ -114,12 +118,17 @@ $('.card').click(function(){
     } else if (moveCount === 44) {
         $('.stars li').last().remove();
     };
-    if ((timerSec == 0) && (timerSecTen == 0) && (timerMin == 0)) {
-        countUp();
-    };
     });
 };
 
+function doubleClickCheck(array) {
+    var card1 = array[0];
+    var card2 = array[1];
+    if (($(card1).position().left === $(card2).position().left) && ($(card1).position().top === $(card2).position().top)){
+        moveCount = moveCount - 1;
+        moveCounter();
+    }
+};
 
 //End Function on card click
 
@@ -203,18 +212,6 @@ function stopCount() {
 $('.startTimer').click(function(){
     $('.startAlert').toggleClass('hidden');
     clickCard();
-    // $('.card').addClass('clickStart');
-    // $('.clickStart').click(function () {
-        // $('.seconds').text(timerSec);
-        // countUp();
-        // $('.card').removeClass('clickStart')
-    // })
 })
-
-// $('.clickStart').click(function(){
-//     $('.seconds').text(timerSec);
-//     countUp();
-//     $('.card').removeClass('clickStart');
-// })
 
 // End Timer functions
