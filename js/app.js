@@ -83,7 +83,6 @@ function checkWin() {
         $('.score').text(moveCount);
         $('.alert').toggleClass('hidden');
         $('.finalTime').text(timerMin + ":" + timerSecTen + timerSec);  
-        // $('.time').toggleClass('hidden');
         $('.starFinal').html($('.stars')); 
         $('.scorePanel').toggleClass('hidden');
     }
@@ -109,7 +108,7 @@ $('.card').click(function(){
     } else {
         $(this).addClass('open show')
         selected.push($(this));
-        moveCount = moveCount + 1;
+        moveCount++;
         moveCounter();
     }
     doubleClickCheck(selected);
@@ -117,11 +116,12 @@ $('.card').click(function(){
             checkCards(selected);
             checkWin();
     };
-    if (moveCount === 30) {
-        $('.stars li').last().remove();
-    } else if (moveCount === 44) {
-        $('.stars li').last().remove();
-    };
+    //Star Rating
+        if (moveCount === 30) {
+            $('.stars li').last().remove();
+        } else if (moveCount === 44) {
+            $('.stars li').last().remove();
+        };
     });
 };
 
@@ -129,7 +129,7 @@ function doubleClickCheck(array) {
     var card1 = array[0];
     var card2 = array[1];
     if (($(card1).position().left === $(card2).position().left) && ($(card1).position().top === $(card2).position().top)){
-        moveCount = moveCount - 1;
+        moveCount--; 
         moveCounter();
     }
 };
@@ -140,7 +140,6 @@ function doubleClickCheck(array) {
 $('#playAgain').click(function(){
     $('.card').toggleClass('open show match');
     $('.alert').toggleClass('hidden');
-    // $('.time').toggleClass('hidden');
     $('.scorePanel').toggleClass('hidden');
     $('.starContainer').html($('.stars'));
     starReset();
