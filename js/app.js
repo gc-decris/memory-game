@@ -98,6 +98,7 @@ function starReset() {
 // End function to reset stars
 
 // Function on card click -- check for match, check for win, and change star rating
+function clickCard(){
 $('.card').click(function(){
     $(this).addClass('open show')
     $('.notMatched').removeClass('open show notMatched');
@@ -108,12 +109,16 @@ $('.card').click(function(){
             checkCards(selected);
             checkWin();
     };
-        if (moveCount === 30) {
-            $('.stars li').last().remove();
-        } else if (moveCount === 44) {
-            $('.stars li').last().remove();
-        };
+    if (moveCount === 30) {
+        $('.stars li').last().remove();
+    } else if (moveCount === 44) {
+        $('.stars li').last().remove();
+    };
+    if ((timerSec == 0) && (timerSecTen == 0) && (timerMin == 0)) {
+        countUp();
+    };
     });
+};
 
 
 //End Function on card click
@@ -126,6 +131,7 @@ $('#playAgain').click(function(){
     $('.scorePanel').toggleClass('hidden');
     $('.starContainer').html($('.stars'));
     starReset();
+    stopCount();
     resetTime();
     moveCount = 0;
     moveCounter();
@@ -147,6 +153,7 @@ $('.restart').click(function () {
     };
     moveCount = 0;
     moveCounter();
+    stopCount();
     resetTime();
 });
 //End Restart game mid-game
@@ -155,7 +162,7 @@ $('.restart').click(function () {
 
 var timerSec = 0;
 var timerMin = 0;
-var timerSecTen = "0";
+var timerSecTen = 0;
 
 function resetTime(){
     timerSec = 0;
@@ -165,6 +172,8 @@ function resetTime(){
     $('.secondsTen').text(timerSecTen);
     $('.minutes').text(timerMin);
 }
+
+var timer
 
 function countUp() {
     if (timerSec === 9) {
@@ -183,13 +192,29 @@ function countUp() {
         timerSec++;
         $('.seconds').text(timerSec);
     };
-    setTimeout("countUp()", 1000);
+    timer = setTimeout("countUp()", 1000);
 };
 
+function stopCount() {
+    clearTimeout(timer);
+    timer = null;
+}
+
 $('.startTimer').click(function(){
-    $('.seconds').text(timerSec);
-    countUp();
     $('.startAlert').toggleClass('hidden');
+    clickCard();
+    // $('.card').addClass('clickStart');
+    // $('.clickStart').click(function () {
+        // $('.seconds').text(timerSec);
+        // countUp();
+        // $('.card').removeClass('clickStart')
+    // })
 })
+
+// $('.clickStart').click(function(){
+//     $('.seconds').text(timerSec);
+//     countUp();
+//     $('.card').removeClass('clickStart');
+// })
 
 // End Timer functions
