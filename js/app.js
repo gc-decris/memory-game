@@ -97,17 +97,21 @@ function starReset() {
 }
 // End function to reset stars
 
-// Function on card click -- check for match, check for win, and change star rating
+// Function on card click -- check for match, check for win, start timer, and change star rating
 function clickCard(){
 $('.card').click(function(){
     if ((timerSec == 0) && (timerSecTen == 0) && (timerMin == 0)) {
         countUp();
     };
-    $('.notMatched').removeClass('open show notMatched');
-    $(this).addClass('open show')
-    selected.push($(this));
-    moveCount = moveCount + 1;
-    moveCounter();
+    $('.notMatched').removeClass('open show notMatched');  
+    if ($(this).hasClass('match')) {
+
+    } else {
+        $(this).addClass('open show')
+        selected.push($(this));
+        moveCount = moveCount + 1;
+        moveCounter();
+    }
     doubleClickCheck(selected);
     if (selected.length == 2) {
             checkCards(selected);
